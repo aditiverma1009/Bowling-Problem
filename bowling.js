@@ -1,4 +1,4 @@
-const bowlingScorer = () => 1;
+const bowlingScorer = ScoreArray => 1;
 
 
 module.exports = bowlingScorer;
