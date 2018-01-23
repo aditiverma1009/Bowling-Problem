@@ -1,18 +1,34 @@
+// checkType returns type of frame : 1 stands for strike, 2 for spare and 3 for open frame
+function checkType(throw1, throw2) {
+  const sum = throw1 + throw2;
+  if (throw1 === 10) {
+    return 1;
+  } else if (sum === 10) {
+    return 2;
+  }
+  return 3;
+}
+
 module.exports = function scoringBowling(scoreArr) {
   let totalScore = 0;
-  if (scoreArr.length === 12) {
-    for (let i = 0; i < 20; i += 1) {
-      checkType(scoreArr[i],scoreArr[i+1];
+  let frame = 0;
+  let i = 0;
+  while (frame < 10) {
+    const throw1 = scoreArr[i];
+    const throw2 = scoreArr[i + 1];
+    const typeOfFrame = checkType(throw1, throw2);
+    if (typeOfFrame === 1) {
+      frame += 1;
+      totalScore += throw1;
+    } else if (typeOfFrame === 2) {
+      frame += 1;
+      i += 1;
+      totalScore += (throw1 + throw2);
+    } else {
+      frame += 1;
+      i += 1;
+      totalScore += (throw1 + throw2);
     }
-  } else {
-    scoreArr.forEach((value) => {
-      totalScore += value;
-    });
   }
-
-  // console.log(typeof (totalScore));
-  // console.log(totalScore);
   return totalScore;
 };
-
-const checkType = (throw1,throw2)=>let sum=throw1+throw2;
