@@ -3,7 +3,7 @@ module.exports = function scoringBowling(scoreArr) {
   scoreArr.forEach((value) => {
     totalScore += value;
   });
-  console.log(typeof (totalScore));
+  // console.log(typeof (totalScore));
   // console.log(totalScore);
   return totalScore;
 };
