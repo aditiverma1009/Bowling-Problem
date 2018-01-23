@@ -38,8 +38,9 @@ module.exports = function scoringBowling(scoreArr) {
       console.log(`totalscore : ${totalScore} ----------`);
     }
   } else {
-
-
+    scoreArr.forEach((value) => {
+      totalScore += value;
+    });
   }
   return totalScore;
 };
