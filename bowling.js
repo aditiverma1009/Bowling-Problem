@@ -17,14 +17,14 @@ module.exports = function scoringBowling(scoreArr) {
     const throw1 = scoreArr[i];
     const throw2 = scoreArr[i + 1];
     const typeOfFrame = checkType(throw1, throw2);
-    if (typeOfFrame === 1) {
+    if (typeOfFrame === 1) { // strike case
       frame += 1;
       totalScore += throw1;
-    } else if (typeOfFrame === 2) {
+    } else if (typeOfFrame === 2) { // spare case
       frame += 1;
       i += 1;
-      totalScore += (throw1 + throw2);
-    } else {
+      totalScore += (throw1 + throw2 + scoreArr[(i + 2)]);
+    } else { // open frame case
       frame += 1;
       i += 1;
       totalScore += (throw1 + throw2);
