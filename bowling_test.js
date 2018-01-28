@@ -1,13 +1,13 @@
 const tester = require('./bowling');
 
-//all
-let input1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-let input2=[1,0,2,0,3,0,4,0,5,0,6,0,7,0,3,0,2,0,1,0];
-let input3=[1,9,2,1,3,3,4,4,5,5,3,4,7,2,3,7,1,8,1,9,2,2];
-let input4=[1,9,2,1,3,3,4,4,5,5,3,4,7,2,3,7,1,8,1,9,2,8];
-let input5=[1,9,2,8,3,7,4,6,5,5,3,7,7,3,3,7,1,9,1,9,2,8];
-let input6=[10,10,10,10,10,10,10,10,10,10,10,10];
-let input7=[10,0,9,10,8,2,10,10,1,9,10,10,10,9,1];
+// all
+const input1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const input2 = [1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 3, 0, 2, 0, 1, 0];
+const input3 = [1, 9, 2, 1, 3, 3, 4, 4, 5, 5, 3, 4, 7, 2, 3, 7, 1, 8, 1, 9, 2, 2];
+const input4 = [1, 9, 2, 1, 3, 3, 4, 4, 5, 5, 3, 4, 7, 2, 3, 7, 1, 8, 1, 9, 2, 8];
+const input5 = [1, 9, 2, 8, 3, 7, 4, 6, 5, 5, 3, 7, 7, 3, 3, 7, 1, 9, 1, 9, 2, 8];
+const input6 = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+const input7 = [10, 0, 9, 10, 8, 2, 10, 10, 1, 9, 10, 10, 10, 9, 1];
 
 describe('To check for various cases of open frames,spares and strikes', () => {
   test('all zeros', () => {
@@ -40,10 +40,10 @@ describe('To check for various invalid inputs', () => {
     expect(tester(undefined)).toBe(false);
   });
 });
-let input8=[1,2,1,9,10,10,2,5];
-let input9=[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1];
-let input10=[1,9,2,8,3,7,4,6,5,5,3,7,7,3,3,7,1,9,1,9];
-let input11=[1,10,2,8,3,7,4,6,5,5,3,7,7,3,3,7,1,9,1,9];
+const input8 = [1, 2, 1, 9, 10, 10, 2, 5];
+const input9 = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1];
+const input10 = [1, 9, 2, 8, 3, 7, 4, 6, 5, 5, 3, 7, 7, 3, 3, 7, 1, 9, 1, 9];
+const input11 = [1, 10, 2, 8, 3, 7, 4, 6, 5, 5, 3, 7, 7, 3, 3, 7, 1, 9, 1, 9];
 describe('To check for impossible score cards', () => {
   test('score array with unusual no of elements', () => {
     expect(tester(input8)).toBe(false);
@@ -61,7 +61,7 @@ describe('To check for impossible score cards', () => {
     expect(tester([])).toBe(false);
   });
   test('score array with empty array', () => {
-    expect(typeof(tester(input2))).toBe(typeof(9));
+    expect(typeof (tester(input2))).toBe(typeof (9));
   });
 });
-//check if output is a number
+// check if output is a number
