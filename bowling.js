@@ -8,37 +8,52 @@ function checkType(throw1, throw2) {
   } else if (sum !== 10) { return 3; }
 }
 
-module.exports = function scoringBowling(scoreArr) {
+function validate(scoreArr){
+  if(scoreArr===null ||scoreArr===undefined){
+    return false;
+  }
+  if(scoreArr.length<12 || scoreArr.length>22){
+    return false;
+  }
+}
+function scoringBowling(scoreArr) {
+  if(validate(scoreArr)===false){
+    return false;
+  }
   let totalScore = 0;
   let frame = 0;
   let i = 0;
-  while (frame < 10) {
-    const throw1 = scoreArr[i];
-    const throw2 = scoreArr[i + 1];
-    const throw3 = scoreArr[i + 2];
-    console.log(`throw1 : ${throw1}`);
-    console.log(`throw2 : ${throw2}`);
-    console.log(`throw3 : ${throw3}`);
-
-    const typeOfFrame = checkType(throw1, throw2);
-    console.log(`result of typeofframe : ${typeOfFrame}`);
-    if (typeOfFrame === 1) { // strike case
-      i += 1;
-      totalScore += throw1;
+  let flag=0;
+  while (frame < 10 || flag==1) {
+    const typeOfFrame = checkType(scoreArr[i], scoreArr[i+1]);
+    if(frame===9){
+      if(typeOfFrame ===2)//spare
+      {
+        totalScore+=scoreArr[i]+scoreArr[i+1]+scoreArr[i+2]+scoreArr[i+3];
+      } else if(typeOfFrame===1)//strike
+      {
+        totalScore+=scoreArr[i]+scoreArr[i+1]+scoreArr[i+2];
+      } else{ //open
+        totalScore+=scoreArr[i]+scoreArr[i+1];
+      }
+      flag=1;
+      break;
+    } else if (typeOfFrame === 1) { // strike case
+      totalScore += scoreArr[i]+scoreArr[i+1]+scoreArr[i+2];
+      i+=1;
     } else if (typeOfFrame === 2) { // spare case
+      totalScore += (scoreArr[i] + scoreArr[i + 1]+scoreArr[i+2]);
       i += 2;
-      totalScore += (throw1 + throw2 + throw3);
     } else if (typeOfFrame === 3) { // open frame case
-      i += 3;
-      totalScore += (throw1 + throw2);
+      totalScore += (scoreArr[i] + scoreArr[i + 1]);
+      i += 2;
     }
     frame += 1;
-    console.log(`no of frame : ${frame}`);
-    console.log(`totalscore : ${totalScore} ----------`);
+    console.log('typeOfFrame : '+typeOfFrame+ ' \n'+'frame no : '+frame+'\ni is : '+i+' \ntotalScore : '+totalScore+'\n')
   }
-
-  
+  if(totalScore===NaN){
+    return false;
+  }
   return totalScore;
 };
-const inputAllOpenFrame = [1, 2, 3, 4, 4, 2, 1, 1, 1, 1, 3, 3, 2, 2, 8, 1, 1, 1, 1, 3];
-scoringBowling(inputAllOpenFrame);
+module.exports =scoringBowling;

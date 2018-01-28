@@ -4,7 +4,7 @@
   "description": "",
   "main": "bowling.test.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --notify",
     "coverage": "jest --coverage --notify"
   },
   "author": "",
