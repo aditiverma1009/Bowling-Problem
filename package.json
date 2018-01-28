@@ -5,14 +5,25 @@
   "main": "bowling.test.js",
   "scripts": {
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage --notify"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.0",
     "jest": "^22.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditiverma1009/Eval1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aditiverma1009/Eval1/issues"
+  },
+  "homepage": "https://github.com/aditiverma1009/Eval1#readme"
 }

@@ -1,22 +1,9 @@
 module.exports = {
-    "extends": "airbnb",
-    "env": {
-      "jest" : true,
-      "es6" : true,
-      "node" :true
-    },
-    "rules": {
-           "semi": [
-               "error",
-               "always"
-           ],
-           "no-console" : "off"
-       }
+    "extends": "airbnb-base",
+    "rules":{
+      "no-console":0
+    }
+    "env":{
+      "jest":true
+    }
 };
-/*module.exports = {
-  "extends": "airbnb",
-  "env": {
-    "jest": true
-  }
-};
-*/
