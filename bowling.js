@@ -39,7 +39,7 @@ function scoringBowling(scoreArr) {
       } else { // open
         totalScore += scoreArr[i] + scoreArr[i + 1];
       }
-      if (isNaN(totalScore) === true) {
+      if (Number.isNaN(totalScore)) {
         return false;
       }
       flag = 1;
