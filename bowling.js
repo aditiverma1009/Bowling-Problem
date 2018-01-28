@@ -17,15 +17,16 @@ function validate(scoreArr){
   }
 }
 function scoringBowling(scoreArr) {
-  if(validate(scoreArr)===false){
-    return false;
-  }
   let totalScore = 0;
   let frame = 0;
   let i = 0;
   let flag=0;
+  if(validate(scoreArr)===false){
+    return false;
+  }
   while (frame < 10 || flag==1) {
-    const typeOfFrame = checkType(scoreArr[i], scoreArr[i+1]);
+    let typeOfFrame=0;
+     typeOfFrame = checkType(scoreArr[i], scoreArr[i+1]);
     if(frame===9){
       if(typeOfFrame ===2)//spare
       {
@@ -36,6 +37,7 @@ function scoringBowling(scoreArr) {
       } else{ //open
         totalScore+=scoreArr[i]+scoreArr[i+1];
       }
+      if(isNaN(totalScore)===true){return false;}
       flag=1;
       break;
     } else if (typeOfFrame === 1) { // strike case
@@ -49,10 +51,7 @@ function scoringBowling(scoreArr) {
       i += 2;
     }
     frame += 1;
-    console.log('typeOfFrame : '+typeOfFrame+ ' \n'+'frame no : '+frame+'\ni is : '+i+' \ntotalScore : '+totalScore+'\n')
-  }
-  if(totalScore===NaN){
-    return false;
+    console.log('typeOfFrame : '+typeOfFrame+ ' \n'+'frame no : '+frame+'\ni is : '+i+' \ntotalScore : '+totalScore+'\n');
   }
   return totalScore;
 };
