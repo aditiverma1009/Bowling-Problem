@@ -43,6 +43,7 @@ describe('To check for various invalid inputs', () => {
 let input8=[1,2,1,9,10,10,2,5];
 let input9=[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1];
 let input10=[1,9,2,8,3,7,4,6,5,5,3,7,7,3,3,7,1,9,1,9];
+let input11=[1,10,2,8,3,7,4,6,5,5,3,7,7,3,3,7,1,9,1,9];
 describe('To check for impossible score cards', () => {
   test('score array with unusual no of elements', () => {
     expect(tester(input8)).toBe(false);
@@ -52,6 +53,12 @@ describe('To check for impossible score cards', () => {
   });
   test('score array with impossible element sequence such as, strike in 10th frame not followed by fill ball', () => {
     expect(tester(input10)).toBe(false);
+  });
+  test('score array with sum more than 10 in a frame', () => {
+    expect(tester(input11)).toBe(false);
+  });
+  test('score array with empty array', () => {
+    expect(tester([])).toBe(false);
   });
 });
 //check if output is a number

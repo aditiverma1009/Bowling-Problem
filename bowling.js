@@ -5,7 +5,11 @@ function checkType(throw1, throw2) {
     return 1;
   } else if (sum === 10) {
     return 2;
-  } else if (sum !== 10) { return 3; }
+  } else if (sum <10) {
+    return 3;
+  } else{//invalid
+    return 4;
+  }
 }
 
 function validate(scoreArr){
@@ -49,6 +53,9 @@ function scoringBowling(scoreArr) {
     } else if (typeOfFrame === 3) { // open frame case
       totalScore += (scoreArr[i] + scoreArr[i + 1]);
       i += 2;
+    }else if(typeOfFrame===4)
+    {
+      return false;
     }
     frame += 1;
     console.log('typeOfFrame : '+typeOfFrame+ ' \n'+'frame no : '+frame+'\ni is : '+i+' \ntotalScore : '+totalScore+'\n');
