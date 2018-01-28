@@ -60,5 +60,8 @@ describe('To check for impossible score cards', () => {
   test('score array with empty array', () => {
     expect(tester([])).toBe(false);
   });
+  test('score array with empty array', () => {
+    expect(typeof(tester(input2))).toBe(typeof(9));
+  });
 });
 //check if output is a number
