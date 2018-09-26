@@ -1,7 +1,7 @@
 # Eval1
 Create a server which would be used to create a personalised book library given two external APIs that can be used to retrieve information:
-API 1 - GET - https://5gj1qvkc5h.execute-api.us-east-1.amazonaws.com/dev/allBooks
-API 2 - GET - https://5gj1qvkc5h.execute-api.us-east-1.amazonaws.com/dev/findBookById/{id}
+API 1 - GET - https://aditi5gj1qvkc5h.execute-api.us-east-1.amazonaws.com/dev/allBooks
+API 2 - GET - https://aditi5gj1qvkc5h.execute-api.us-east-1.amazonaws.com/dev/findBookById/{id}
 
 Requirements:
 1. Create an API to get all books from given API 1 and ratings from API 2. API 1 returns an array of books with their id, name and author. Use the ids to get rating for each of the books using API 2. Combine the responses to create a json with books grouped by author names, i.e., author names should be keys and the corresponding value should be an array of author's books with the rating. 
